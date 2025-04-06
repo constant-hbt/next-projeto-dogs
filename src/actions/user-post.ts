@@ -5,21 +5,30 @@ import { userPostUrl } from '@/functions/api-requests';
 import { z } from 'zod';
 import login from './login';
 
-export default async function userPost(state: {}, formData: FormData) {
+type State = {
+  ok: boolean;
+  error: string | null;
+  data: null;
+};
+
+export default async function userPost(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
   const LoginSchema = z.object({
     username: z.string().min(1, 'Usuário obrigatório.'),
     email: z.string().email('E-mail inválido.'),
-    password: z.string().min(1, 'Senha obrigatória.'),
+    password: z.string().min(6, 'A senha deve possuir no mínimo 6 caracteres.'),
   });
 
   try {
-    const { success } = LoginSchema.safeParse({
+    const { success, error } = LoginSchema.safeParse({
       username: formData.get('username'),
       email: formData.get('email'),
       password: formData.get('password'),
     });
 
-    if (!success) throw new Error('Preencha todos os campos corretamente.');
+    if (!success) throw new Error(error.issues[0].message);
 
     const response = await fetch(userPostUrl, {
       method: 'POST',

@@ -1,18 +1,27 @@
 'use server';
 
 import apiError from '@/functions/api-error';
-import { tokenPostUrl } from '@/functions/api-requests';
 import { cookies } from 'next/headers';
 import { z } from 'zod';
+import { tokenPostUrl } from '@/functions/api-requests';
 
-export default async function login(state: {}, formData: FormData) {
+type State = {
+  ok: boolean;
+  error: string | null;
+  data: null;
+};
+
+export default async function login(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
   const LoginSchema = z.object({
     username: z.string().min(1, 'Usuário obrigatório.'),
-    password: z.string().min(1, 'Senha obrigatória.'),
+    password: z.string().min(6, 'A senha deve possuir no mínimo 6 caracteres.'),
   });
 
   try {
-    const { success, data, error } = LoginSchema.safeParse({
+    const { success } = LoginSchema.safeParse({
       username: formData.get('username'),
       password: formData.get('password'),
     });

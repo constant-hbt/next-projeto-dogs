@@ -13,5 +13,12 @@ const tokenPostUrl = getUrl('/jwt-auth/v1/token');
 const userPostUrl = getUrl('/api/user');
 const passwordLostUrl = getUrl('/api/password/lost');
 const passwordResetUrl = getUrl('/api/password/reset');
+const userGetUrl = getUrl('/api/user');
 
-export { tokenPostUrl, userPostUrl, passwordLostUrl, passwordResetUrl };
+export {
+  tokenPostUrl,
+  userPostUrl,
+  passwordLostUrl,
+  passwordResetUrl,
+  userGetUrl,
+};

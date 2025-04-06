@@ -17,7 +17,7 @@ export default async function passwordReset(
 ): Promise<State> {
   const LoginSchema = z.object({
     login: z.string().min(1, 'Login obrigatório.'),
-    password: z.string().min(6, 'A senha deve possuir no mínimo 6 caracteres.'),
+    password: z.string().min(3, 'A senha deve possuir no mínimo 3 caracteres.'),
     key: z.string().min(1, 'Key obrigatória.'),
   });
 

@@ -17,7 +17,7 @@ export default async function login(
 ): Promise<State> {
   const LoginSchema = z.object({
     username: z.string().min(1, 'Usuário obrigatório.'),
-    password: z.string().min(6, 'A senha deve possuir no mínimo 6 caracteres.'),
+    password: z.string().min(3, 'A senha deve possuir no mínimo 3 caracteres.'),
   });
 
   try {

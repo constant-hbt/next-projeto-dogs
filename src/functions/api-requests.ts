@@ -1,3 +1,4 @@
+import photosGet from '@/actions/photos-get';
 function getUrl(path: string) {
   let urlBaseApi = process.env.API_URL;
 
@@ -14,6 +15,16 @@ const userPostUrl = getUrl('/api/user');
 const passwordLostUrl = getUrl('/api/password/lost');
 const passwordResetUrl = getUrl('/api/password/reset');
 const userGetUrl = getUrl('/api/user');
+const photoPostUrl = getUrl('/api/photo');
+const photosGetUrl = ({
+  page,
+  total,
+  user,
+}: {
+  page: number;
+  total: number;
+  user: 0 | string;
+}) => getUrl(`/api/photo/?_page=${page}&_total=${total}&_user=${user}`);
 
 export {
   tokenPostUrl,
@@ -21,4 +32,6 @@ export {
   passwordLostUrl,
   passwordResetUrl,
   userGetUrl,
+  photoPostUrl,
+  photosGetUrl,
 };

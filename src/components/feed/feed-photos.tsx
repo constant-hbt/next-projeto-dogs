@@ -8,6 +8,8 @@ type FeedPhotosProps = {
 };
 
 export default function FeedPhotos({ photos }: FeedPhotosProps) {
+  if (!photos.length) return null;
+
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {photos.map((photo, index) => (

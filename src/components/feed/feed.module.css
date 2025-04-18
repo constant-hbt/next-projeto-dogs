@@ -60,3 +60,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.loadingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin: 1rem auto;
+}
+
+.loadingWrapper p {
+  text-align: center;
+  margin: auto;
+  color: #888;
+}

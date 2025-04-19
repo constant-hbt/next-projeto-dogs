@@ -19,6 +19,7 @@ const photoPostUrl = getUrl('/api/photo');
 const photoGetUrl = (id: string) => getUrl(`/api/photo/${id}`);
 const photoDeleteUrl = (id: string) => getUrl(`/api/photo/${id}`);
 const commentPostUrl = (id: number) => getUrl(`/api/comment/${id}`);
+const statsGetUrl = getUrl('/api/stats');
 
 const photosGetUrl = ({
   page,
@@ -41,4 +42,5 @@ export {
   photoDeleteUrl,
   photosGetUrl,
   commentPostUrl,
+  statsGetUrl,
 };

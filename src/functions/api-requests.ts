@@ -20,6 +20,7 @@ const photoGetUrl = (id: string) => getUrl(`/api/photo/${id}`);
 const photoDeleteUrl = (id: string) => getUrl(`/api/photo/${id}`);
 const commentPostUrl = (id: number) => getUrl(`/api/comment/${id}`);
 const statsGetUrl = getUrl('/api/stats');
+const tokenValidateUrl = getUrl('/jwt-auth/v1/token/validate');
 
 const photosGetUrl = ({
   page,
@@ -43,4 +44,5 @@ export {
   photosGetUrl,
   commentPostUrl,
   statsGetUrl,
+  tokenValidateUrl,
 };

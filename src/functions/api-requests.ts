@@ -17,6 +17,7 @@ const passwordResetUrl = getUrl('/api/password/reset');
 const userGetUrl = getUrl('/api/user');
 const photoPostUrl = getUrl('/api/photo');
 const photoGetUrl = (id: string) => getUrl(`/api/photo/${id}`);
+const photoDeleteUrl = (id: string) => getUrl(`/api/photo/${id}`);
 
 const photosGetUrl = ({
   page,
@@ -36,5 +37,6 @@ export {
   userGetUrl,
   photoPostUrl,
   photoGetUrl,
+  photoDeleteUrl,
   photosGetUrl,
 };

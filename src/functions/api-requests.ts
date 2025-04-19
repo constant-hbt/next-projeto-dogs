@@ -1,4 +1,3 @@
-import photosGet from '@/actions/photos-get';
 function getUrl(path: string) {
   let urlBaseApi = process.env.API_URL;
 

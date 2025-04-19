@@ -31,11 +31,7 @@ export default function ContaPhotoPost() {
   function handleImgChange(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImg(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+      setImg(URL.createObjectURL(file));
     }
   }
 
@@ -55,7 +51,14 @@ export default function ContaPhotoPost() {
         <ErrorMessage error={state.error} />
         <FormButton />
       </form>
-      <div>{img && <img src={img} alt="" />}</div>
+      <div>
+        {img && (
+          <div
+            className={styles.preview}
+            style={{ backgroundImage: `url('${img}')` }}
+          ></div>
+        )}
+      </div>
     </section>
   );
 }

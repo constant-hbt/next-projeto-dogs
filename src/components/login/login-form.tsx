@@ -8,7 +8,6 @@ import Input from '@/components/forms/input';
 import ErrorMessage from '../helper/error-message';
 import Link from 'next/link';
 import styles from './login-form.module.css';
-import { useUser } from '@/contexts/user-context';
 
 // Essa função sempre deve estar do lado de fora do componente
 function FormButton() {

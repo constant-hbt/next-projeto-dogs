@@ -1,7 +1,6 @@
 import photosGet from '@/actions/photos-get';
 import userGet from '@/actions/user-get';
 import Feed from '@/components/feed/feed';
-import { useUser } from '@/contexts/user-context';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import React from 'react';

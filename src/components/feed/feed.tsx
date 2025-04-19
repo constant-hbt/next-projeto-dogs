@@ -59,7 +59,7 @@ export default function Feed({ photos, user = 0 }: FeedProps) {
     }
 
     getPagePhotos(page);
-  }, [page]);
+  }, [page, user]);
 
   React.useEffect(() => {
     if (infinite) {

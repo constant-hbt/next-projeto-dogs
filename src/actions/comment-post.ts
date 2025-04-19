@@ -7,7 +7,16 @@ import { cookies } from 'next/headers';
 import { z } from 'zod';
 import { Comment } from './photo-get';
 
-export default async function commentPost(prevState: {}, formData: FormData) {
+type State = {
+  ok: boolean;
+  error: string | null;
+  data: Comment | null;
+};
+
+export default async function commentPost(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
   const token = (await cookies()).get('token')?.value;
 
   try {

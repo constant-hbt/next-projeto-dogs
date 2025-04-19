@@ -22,7 +22,7 @@ export default async function passwordReset(
   });
 
   try {
-    const { success, data, error } = LoginSchema.safeParse({
+    const { success, error } = LoginSchema.safeParse({
       login: formData.get('login'),
       password: formData.get('password'),
       key: formData.get('key'),

@@ -1,4 +1,3 @@
-import LoginPerdeuForm from '@/components/login/login-perdeu.form';
 import LoginResetarForm from '@/components/login/login-resetar-form';
 import { Metadata } from 'next';
 

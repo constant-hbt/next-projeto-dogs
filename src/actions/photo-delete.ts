@@ -1,7 +1,7 @@
 'use server';
 
 import apiError from '@/functions/api-error';
-import { photoDeleteUrl, photoPostUrl } from '@/functions/api-requests';
+import { photoDeleteUrl } from '@/functions/api-requests';
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';

@@ -14,20 +14,19 @@ type PhotoCommentFormProps = {
 };
 
 export default function PhotoCommentForm({
-  single,
   id,
   setComments,
 }: PhotoCommentFormProps) {
   const [comment, setComment] = React.useState('');
   const [state, action, isPending] = useActionState(commentPost, {
     ok: false,
-    data: null,
     error: '',
+    data: null,
   });
 
   React.useEffect(() => {
     if (state.ok && state.data) {
-      setComments((comments) => [...comments, state.data]);
+      setComments((comments) => [...comments, state.data!]);
       setComment('');
     }
   }, [state, setComments]);

@@ -87,7 +87,7 @@
   margin-top: 5px;
 }
 
-@media (max-width: 64rem){
+@media (max-width: 64rem), (max-height: 36rem) {
   .photo {
     height: auto;
     max-height: calc(100vh - 4rem);
